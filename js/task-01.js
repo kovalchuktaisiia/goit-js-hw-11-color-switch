@@ -24,14 +24,18 @@ const buttonStop = document.querySelector ('[data-action="stop"]');
 const body = document.querySelector('body');
 let timerId = null;
 
-const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
 
 buttonStart.addEventListener("click", () => {
     timerId = setInterval(() => {
       console.log(`I love async JS!`);
-      body.style.backgroundColor = randomIntegerFromInterval;
+
+      const randomIntegerFromInterval = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      };
+      
+      const selectedcolor = colors[randomIntegerFromInterval];
+      
+      body.style.backgroundColor = selectedcolor;
     }, 1000);
   });
 
