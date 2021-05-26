@@ -27,15 +27,17 @@ let timerId = null;
 
 buttonStart.addEventListener("click", () => {
     timerId = setInterval(() => {
-      console.log(`I love async JS!`);
+      console.log(`счетчик интервала`);
 
-      const randomIntegerFromInterval = (min, max) => {
+        const randomIntegerFromInterval = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min);
       };
       
       const selectedcolor = colors[randomIntegerFromInterval];
       
       body.style.backgroundColor = selectedcolor;
+   
+      buttonStart.setAttribute('disabled', true);
     }, 1000);
   });
 
