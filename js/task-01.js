@@ -19,6 +19,27 @@ const colors = [
 
 // Для генерации случайного числа (индекс элемента массива цветов), используй функцию randomIntegerFromInterval.
 
+const buttonStart = document.querySelector ('[data-action="start"]');
+const buttonStop = document.querySelector ('[data-action="stop"]');
+const body = document.querySelector('body');
+let timerId = null;
+
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+buttonStart.addEventListener("click", () => {
+    timerId = setInterval(() => {
+      console.log(`I love async JS!`);
+      body.style.backgroundColor = randomIntegerFromInterval;
+    }, 1000);
+  });
+
+buttonStop.addEventListener ('click', StopChangeBodyColor);
+
+function StopChangeBodyColor (evt) {
+  clearTimeout(timerId)
+ };
+
+
+
