@@ -18,13 +18,13 @@ buttonStart.addEventListener("click", () => {
     timerId = setInterval(() => {
       console.log(`счетчик интервала`);
 
-      //   const randomIntegerFromInterval = (min, max) => {
-      //   return Math.floor(Math.random() * (max - min + 1) + min);
-      // };
+        const randomIntegerFromInterval = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      };
 
-      const randomIntegerFromInterval = Math.floor(Math.random() * colors.length);
+      //const randomIntegerFromInterval = Math.floor(Math.random() * colors.length);
       
-      const selectedcolor = colors[randomIntegerFromInterval];
+      const selectedcolor = colors[randomIntegerFromInterval(0, colors.length - 1)];
       
       body.style.backgroundColor = selectedcolor;
    
