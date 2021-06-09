@@ -15,6 +15,8 @@ let timerId = null;
 
 
 buttonStart.addEventListener("click", () => {
+  buttonStart.setAttribute('disabled', true);
+  
     timerId = setInterval(() => {
       console.log(`счетчик интервала`);
 
@@ -27,8 +29,6 @@ buttonStart.addEventListener("click", () => {
       const selectedcolor = colors[randomIntegerFromInterval(0, colors.length - 1)];
       
       body.style.backgroundColor = selectedcolor;
-   
-      buttonStart.setAttribute('disabled', true);
     }, 1000);
   });
 
